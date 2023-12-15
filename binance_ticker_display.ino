@@ -1,3 +1,5 @@
+// Guide for connecting SSD1306 display to ESP8266 board is here: https://www.electronicshub.org/nodemcu-esp8266-oled-display/
+
 // Display
 #include <SPI.h>
 #include <Wire.h>
