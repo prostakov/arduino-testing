@@ -28,8 +28,8 @@ String ticker = "USTCUSDT";
 void setup() {
   Serial.begin(9600);
   display.begin(SSD1306_SWITCHCAPVCC);
-  WifiConnect();
-  ClearBackground();
+  wifiConnect();
+  clearBackground();
   display.setTextColor(SSD1306_BLACK, SSD1306_WHITE);
   display.setTextSize(2);
   display.setCursor(12,10);
@@ -38,14 +38,14 @@ void setup() {
 
 void loop()
 {
-  String rateValue = GetBinanceTickerRate();
+  String rateValue = getBinanceTickerRate();
   display.setCursor(5,35);
   display.println(rateValue);
   display.display();
   delay(100);
 }
 
-String GetBinanceTickerRate() 
+String getBinanceTickerRate() 
 {
   WiFiClientSecure client;
   client.setInsecure(); // do not validate server SSL certificate
@@ -68,7 +68,7 @@ String GetBinanceTickerRate()
   }
 }
 
-void WifiConnect()
+void wifiConnect()
 {
   // Set WiFi to station mode and disconnect from an AP if it was Previously
   WiFi.mode(WIFI_STA);
@@ -89,7 +89,7 @@ void WifiConnect()
   Serial.println(ip);
 }
 
-void ClearBackground()
+void clearBackground()
 {
   int i;
   int j;
